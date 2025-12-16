@@ -1,66 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/img"
+    >
 
-    <com.google.android.material.circularreveal.CircularRevealFrameLayout
-        android:id="@+id/sheet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:background="@android:color/transparent"
-        android:visibility="invisible"
-        app:layout_behavior="@string/fab_transformation_sheet_behavior">
+    <FrameLayout
+        android:id="@+id/transparent_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@android:color/white"
+        android:clickable="false"
+        tools:background="@android:color/transparent"
+        />
 
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            >
 
-            <TextView
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:id="@+id/option_one_container"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                android:background="#2196F3"
-                android:padding="10dp"
-                android:text="ASK Nilesh" />
+                android:layout_gravity="bottom|end"
+                android:orientation="horizontal"
+                android:paddingEnd="32dp"
+                android:paddingBottom="32dp"
+                >
 
-            <TextView
-                android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="5dp"
+                    android:text="Option 1"
+                    android:textStyle="bold"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_archive"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/option_two_container"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                android:background="#FF9800"
-                android:padding="10dp"
-                android:text="ASK Nilesh" />
+                android:layout_gravity="bottom|end"
+                android:orientation="horizontal"
+                android:paddingEnd="32dp"
+                android:paddingBottom="32dp"
+                >
 
-            <TextView
-                android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="5dp"
+                    android:text="Option 2"
+                    android:textStyle="bold"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:src="@drawable/ic_send"
+                    />
+            </LinearLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                android:background="#9C27B0"
-                android:padding="10dp"
-                android:text="ASK Nilesh" />
+                android:layout_gravity="bottom|end"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="#EA0BEF"
+                android:elevation="5dp"
+                app:rippleColor="#7C0680"
+                />
 
-            <TextView
-                android:id="@+id/tvClose"
-                android:layout_width="match_parent"
+            <ImageView
+                android:id="@+id/plus_imageview"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                android:background="#9C27B0"
-                android:padding="10dp"
-                android:text="Close" />
+                android:layout_gravity="bottom|end"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="32dp"
+                android:elevation="10dp"
+                android:foregroundTint="@color/white"
+                android:src="@drawable/ic_plus_fab"
+                />
+        </FrameLayout>
 
-
-        </LinearLayout>
-    </com.google.android.material.circularreveal.CircularRevealFrameLayout>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
-        app:srcCompat="@drawable/ic_plus_fab"/>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</FrameLayout>
